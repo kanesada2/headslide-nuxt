@@ -1,0 +1,21 @@
+query getArticle($id: Int!) {
+  articles_by_pk(id: $id) {
+    title
+    tag_relations {
+      tag {
+        id
+        name
+      }
+    }
+    slides {
+      order_no
+      description
+      title
+      url
+    }
+    author {
+      id
+      name
+    }
+  }
+}

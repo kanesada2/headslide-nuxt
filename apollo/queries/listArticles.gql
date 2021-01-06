@@ -1,0 +1,18 @@
+query listArticles ($tags: [Int!]){
+     articles(where: {tag_relations: {tag_id: {_in: $tags}}}, limit: 20){
+      id
+      title
+      created_at
+      updated_at
+      author {
+        id
+        name
+      }
+      tag_relations {
+        tag {
+          id
+          name
+        }
+      }
+    }
+  }

@@ -34,7 +34,25 @@ export default {
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
+    '@nuxtjs/apollo'
   ],
+
+  /*
+   ** appolo module configuration
+   */
+  apollo: {
+    cookieAttributes: {
+      expires: 7 // optional, default: 7 (days)
+    },
+    includeNodeModules: true, // optional, default: false (this includes graphql-tag for node_modules folder)
+    authenticationType: 'Bearer', // optional, default: 'Bearer'
+    // optional
+    errorHandler: '~/plugins/apollo-error-handler.js',
+    // required
+    clientConfigs: {
+      default: '~/apollo/clientConfig.js'
+    }
+  },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {

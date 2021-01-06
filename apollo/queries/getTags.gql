@@ -1,0 +1,6 @@
+query get_tags {
+        tags {
+            id
+            name
+        }
+    }
